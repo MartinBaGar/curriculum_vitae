@@ -1,4 +1,10 @@
-#set page(margin: 0%)
+#set page(
+    margin: 0%
+)
+
+#set text(
+    12pt,
+)
 
 #let formation(..jobs) = grid(
   inset: 5pt,
@@ -36,52 +42,33 @@
   }
 )
 
-#let personnal_info(name, email) = grid(
+#let personnal_info(name, age, phone, email, address) = grid(
     inset: 5pt,
     columns: (1fr, 1fr),
     grid.cell(align: left)[
+        #set par(
+          spacing: 6pt,
+          justify: true,
+        )
+        #set text(16pt, weight: "extrabold")
+
         #name
+
+        #age years old
     ],
     grid.cell(align: right)[
+        #set par(
+          spacing: 6pt,
+          justify: true,
+        )
+       
+        #phone
+
         #email
+
+        #address
     ],
 )
-
-// #formation(
-//   (
-//     company: [Pear Seed & Co.],
-//     role: [Lead Engineer],
-//     timeframe: [Jul - Dec],
-//     details: [
-//       - Raised engineers from 3x to 10x
-//       - Did a great job
-//     ],
-//   ),
-//   (
-//     company: [Mega Corp.],
-//     role: [VP of Sales],
-//     timeframe: [Mar - Jun],
-//     details: [- Closed tons of customers],
-//   ),
-// )
-
-// #job_xp(
-//   (
-//     company: [Pear Seed & Co.],
-//     role: [Lead Engineer],
-//     timeframe: [Jul - Dec],
-//     details: [
-//       - Raised engineers from 3x to 10x
-//       - Did a great job
-//     ],
-//   ),
-//   (
-//     company: [Mega Corp.],
-//     role: [VP of Sales],
-//     timeframe: [Mar - Jun],
-//     details: [- Closed tons of customers],
-//   ),
-// )
 
 #grid(
   columns: (0.2fr, 1fr),
@@ -98,47 +85,52 @@
         rect(width: 100%, stroke: (bottom : blue + 5pt, rest: none))[
             #personnal_info(
                 [Martin Bari Garnier],
-                link("mailto:martbari.g@gmail.com"),
+                [25],
+                [+33 6 52 63 21 07],
+                [#link("mailto:martbari.g@gmail.com")],
+                [48 rue des vinaigriers, 75010 Paris],
             )
         ],
-        grid.cell()[
+        grid.cell(
+            inset: 15pt,
+        )[
             #formation(
-  (
-    company: [Pear Seed & Co.],
-    role: [Lead Engineer],
-    timeframe: [Jul - Dec],
-    details: [
-      - Raised engineers from 3x to 10x
-      - Did a great job
-    ],
-  ),
-  (
-    company: [Mega Corp.],
-    role: [VP of Sales],
-    timeframe: [Mar - Jun],
-    details: [- Closed tons of customers],
-  ),
-)
+        (
+        company: [Pear Seed & Co.],
+        role: [Lead Engineer],
+        timeframe: [Jul - Dec],
+        details: [
+        - Raised engineers from 3x to 10x
+        - Did a great job
+        ],
+        ),
+        (
+        company: [Mega Corp.],
+        role: [VP of Sales],
+        timeframe: [Mar - Jun],
+        details: [- Closed tons of customers],
+        ),
+        )
 
-#job_xp(
-  (
-    company: [Pear Seed & Co.],
-    role: [Lead Engineer],
-    timeframe: [Jul - Dec],
-    details: [
-      - Raised engineers from 3x to 10x
-      - Did a great job
-    ],
-  ),
-  (
-    company: [Mega Corp.],
-    role: [VP of Sales],
-    timeframe: [Mar - Jun],
-    details: [- Closed tons of customers],
-  ),
-)
-],
-    )
+        #job_xp(
+        (
+        company: [Pear Seed & Co.],
+        role: [Lead Engineer],
+        timeframe: [Jul - Dec],
+        details: [
+        - Raised engineers from 3x to 10x
+        - Did a great job
+        ],
+        ),
+        (
+        company: [Mega Corp.],
+        role: [VP of Sales],
+        timeframe: [Mar - Jun],
+        details: [- Closed tons of customers],
+        ),
+        )
+        ],
+        )
     // rect(height: 100%, stroke: (right : blue + 5pt, rest: none))[
     // #image("chimpanzee_tongue_out.png", width: 100%)
     //     #align(center,
