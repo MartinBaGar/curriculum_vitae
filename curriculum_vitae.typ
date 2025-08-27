@@ -47,7 +47,7 @@
     columns: (1fr, 1fr),
     grid.cell(align: left)[
         #set par(
-          spacing: 6pt,
+          spacing: 4pt,
           justify: true,
         )
         #set text(16pt, weight: "extrabold")
@@ -113,8 +113,17 @@
         )
 
         #job_xp(
-        (
-        company: [Pear Seed & Co.],
+            (
+                company: [Pear Seed & Co.],
+        role: [Lead Engineer],
+        timeframe: [Jul - Dec],
+        details: [
+        - Raised engineers from 3x to 10x
+        - Did a great job
+        ],
+            ),
+            (
+                company: [Pear Seed & Co.],
         role: [Lead Engineer],
         timeframe: [Jul - Dec],
         details: [
