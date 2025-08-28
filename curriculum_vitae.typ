@@ -17,8 +17,18 @@
   {
     for job in jobs.pos() {
         [
-          *#job.company* - #job.role _(#job.timeframe)_ \
-          #job.details
+          #set par(
+            spacing: 4pt,
+            justify: true,
+          )
+          *#job.diploma* - #job.institution _(#job.timeframe)_ \
+          #emph(job.feeling) \
+
+            #par(
+                job.details,
+                spacing: 10pt,
+            )
+          
         ]
     }
   }
@@ -71,46 +81,73 @@
 )
 
 #grid(
-  columns: (0.2fr, 1fr),
+  rows: (0.2fr, 1fr),
     grid(
-        rows: (0.2fr, 1fr),
-        stroke: (right : blue + 5pt, rest: none),
-        rect(stroke: (bottom : blue + 5pt, rest: none))[
-         #image("chimpanzee_tongue_out.png", width: 100%)
+        columns: (auto, auto),
+        stroke: (bottom : blue + 5pt, rest: none),
+        align: horizon,
+        rect(
+            stroke: none,
+            inset: 15pt,
+        )[
+            #image("chimpanzee_tongue_out.png")
         ],
-        grid.cell()["hello dfkjh"],
-    ),
-    grid(
-        rows: (auto, auto),
-        rect(width: 100%, stroke: (bottom : blue + 5pt, rest: none))[
-            #personnal_info(
+        rect(
+            inset: (
+                left: 30pt,
+                right: 30pt
+            ),
+            stroke: none, width: 100%)[
+                #personnal_info(
                 [Martin Bari Garnier],
-                [25],
+                [26],
                 [+33 6 52 63 21 07],
                 [#link("mailto:martbari.g@gmail.com")],
                 [48 rue des vinaigriers, 75010 Paris],
             )
         ],
+    ),
+    grid(
+        columns: (auto, auto),
+        rows: (auto, auto),
+        grid.cell(
+            rowspan: 2,
+            align: center,
+            inset: (
+                top: 20pt,
+                left: 20pt,
+                right: 20pt
+            ),
+            stroke: (
+                right: blue + 5pt
+            )
+        )[
+            #set text(16pt)
+            *Skills*
+        ],
         grid.cell(
             inset: 15pt,
         )[
             #formation(
-        (
-        company: [Pear Seed & Co.],
-        role: [Lead Engineer],
-        timeframe: [Jul - Dec],
-        details: [
-        - Raised engineers from 3x to 10x
-        - Did a great job
-        ],
-        ),
-        (
-        company: [Mega Corp.],
-        role: [VP of Sales],
-        timeframe: [Mar - Jun],
-        details: [- Closed tons of customers],
-        ),
-        )
+                (
+                    diploma: [Master Bio-Informatique : _In Silico Drug Design_],
+                    institution: [Université Paris-Cité],
+                    timeframe: [2023-2025],
+                    feeling: [Ma première approche de la chimie],
+                    details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
+                ),
+                (
+                    diploma: [DUT Chimie],
+                    institution: [Université Paris-Est Créteil],
+                    timeframe: [2017-2019],
+                    feeling: [Une application de la chimie dans un domaine qui m’intéresse],
+                    details: [
+                        Chimie organique, bioorganique, bioinorganique, analytique et du médicament \
+                        Biologie moléculaire, cellulaire et du développement\
+                        Biochimie membranaire, du métabolisme
+                    ],
+                ),
+            )
 
         #job_xp(
             (
