@@ -6,6 +6,43 @@
     12pt,
 )
 
+#let personnal_info(name, age, phone, email, address) = grid(
+    inset: 0pt,
+    columns: (1fr, 1fr),
+    grid.cell(align: left)[
+        #set par(
+          spacing: 12pt,
+          justify: true,
+        )
+        #set text(20pt, weight: "extrabold")
+
+        #name
+
+        #age years old
+    ],
+    grid.cell(align: right)[
+        #set par(
+          spacing: 6pt,
+          justify: true,
+        )
+
+        #phone
+
+        #email
+
+        #address
+    ],
+)
+
+#let skills_block(..skills) = grid(
+    inset: 5pt,
+    {
+        for skill in skills.pos() {
+                skill.name
+        }
+    }
+)
+
 #let formation(..jobs) = grid(
   inset: 5pt,
   grid.header(grid.cell[
@@ -52,34 +89,6 @@
   }
 )
 
-#let personnal_info(name, age, phone, email, address) = grid(
-    inset: 5pt,
-    columns: (1fr, 1fr),
-    grid.cell(align: left)[
-        #set par(
-          spacing: 4pt,
-          justify: true,
-        )
-        #set text(16pt, weight: "extrabold")
-
-        #name
-
-        #age years old
-    ],
-    grid.cell(align: right)[
-        #set par(
-          spacing: 6pt,
-          justify: true,
-        )
-       
-        #phone
-
-        #email
-
-        #address
-    ],
-)
-
 #grid(
   rows: (0.2fr, 1fr),
     grid(
@@ -94,7 +103,7 @@
         ],
         rect(
             inset: (
-                left: 30pt,
+                left: 20pt,
                 right: 30pt
             ),
             stroke: none, width: 100%)[
@@ -108,8 +117,8 @@
         ],
     ),
     grid(
-        columns: (auto, auto),
-        rows: (auto, auto),
+        columns: (1fr, 4fr),
+        // rows: (2fr, 1fr),
         grid.cell(
             rowspan: 2,
             align: center,
@@ -122,59 +131,104 @@
                 right: blue + 5pt
             )
         )[
-            #set text(16pt)
+            #set text(20pt)
             *Skills*
+
+            // #skills_block(
+            //     (
+            //         name: [Informatique],
+            //     ),
+            //     // (
+            //         name: subskill : [Informatique],
+            //     // ),
+            // )
         ],
         grid.cell(
             inset: 15pt,
         )[
             #formation(
                 (
-                    diploma: [Master Bio-Informatique : _In Silico Drug Design_],
+                    diploma: [Master Bio-informatique : _In Silico Drug Design_],
                     institution: [Université Paris-Cité],
                     timeframe: [2023-2025],
-                    feeling: [Ma première approche de la chimie],
-                    details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
+                    feeling: [L’informatique: l’approche qui me stimule],
+                    details: [Modélisation de macromolécules et Dynamique Moléculaire, Analyse de données en Drug Design, Criblage haut-débit, Docking],
                 ),
+
+                (
+                    diploma: [Master Chimie, Biologie et Médicament],
+                    institution: [Université de Strasbourg],
+                    timeframe: [2021-2023],
+                    feeling: [Renforcer mes compétences dans l’environnement qui me correspond],
+                    details: [Stratégie de synthèse en chimie organique pour des biomolécules, Biologie chimique, Ingénierie des protéines, Chémoinformatique, Drug Design],
+                ),
+
+                (
+                    diploma: [Licence Chimie-Biologie],
+                    institution: [Université Paris-Saclay],
+                    timeframe: [2019-2021],
+                    feeling: [Une application de la chimie dans un domaine qui m’intéresse],
+                    details: [Chimie organique, bioorganique, bioinorganique, analytique et du médicament, Biologie moléculaire, cellulaire et du développement, Biochimie membranaire, du métabolisme],
+                ),
+
                 (
                     diploma: [DUT Chimie],
                     institution: [Université Paris-Est Créteil],
                     timeframe: [2017-2019],
-                    feeling: [Une application de la chimie dans un domaine qui m’intéresse],
-                    details: [
-                        Chimie organique, bioorganique, bioinorganique, analytique et du médicament \
-                        Biologie moléculaire, cellulaire et du développement\
-                        Biochimie membranaire, du métabolisme
-                    ],
+                    feeling: [Ma première approche de la chimie],
+                    details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
 
-        #job_xp(
-            (
-                company: [Pear Seed & Co.],
-        role: [Lead Engineer],
-        timeframe: [Jul - Dec],
-        details: [
-        - Raised engineers from 3x to 10x
-        - Did a great job
-        ],
-            ),
-            (
-                company: [Pear Seed & Co.],
-        role: [Lead Engineer],
-        timeframe: [Jul - Dec],
-        details: [
-        - Raised engineers from 3x to 10x
-        - Did a great job
-        ],
-        ),
-        (
-        company: [Mega Corp.],
-        role: [VP of Sales],
-        timeframe: [Mar - Jun],
-        details: [- Closed tons of customers],
-        ),
-        )
+            #job_xp(
+                (
+                    company: [Pear Seed & Co.],
+                    role: [Lead Engineer],
+                    timeframe: [Jul - Dec],
+                    details: [
+                        - Raised engineers from 3x to 10x
+                        - Did a great job
+                    ],
+                ),
+                (
+                    company: [Biovia - Dassault Systèmes],
+                    role: [],
+                    timeframe: [Mai-Juin 2024],
+                    details: [
+                        Développement d'un workflow intégrant l’IA pour la conception de ligands
+                        Génération de ligands (PMDM, PocketFlow), Evaluation de leur vraisemblance (PosesBuster), Docking (GOLD, Quick Vina 2), Analyse des interactions (Discovery Studio)
+                    ],
+                ),
+                (
+                    company: [Laboratoire d’Innovation Thérapeutique],
+                    role: [],
+                    timeframe: [Janvier-Juin 2023],
+                    details: [
+                        Modélisation des état conformationnels du corécepteur de HIV-1
+                        en relation avec le tropisme viral R5 et R5X4
+                        Simulation par Dynamique Moléculaire
+                        et Analyse avec la suite Amber
+                    ],
+                ),
+                (
+                    company: [Department of Immunology of the Okayama University],
+                    role: [],
+                    timeframe: [Avril-Août 2022],
+                    details: [
+                        Analyse de la base de données « The Cancer Genome Atlas » avec R
+                        Caractérisation de l’expression de différentes protéines
+                    ],
+                ),
+                (
+                    company: [Federal University of Pernambouco],
+                    role: [],
+                    timeframe: [Avril-Juin 2019],
+                    details: [
+                        Synthèse et caractérisation de nanoparticules d’argent à effet larvicide
+                        Test d’efficacité des nanoparticules d’argent
+                    ],
+                )
+            )
         ],
         )
     // rect(height: 100%, stroke: (right : blue + 5pt, rest: none))[
