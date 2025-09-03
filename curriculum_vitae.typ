@@ -37,25 +37,38 @@
     ],
 )
 
-#let skills-block(..skills) = grid(
-  columns: 1,
-  {
-    text(weight: "bold", "Skills\n")
-    for skill in skills.pos() {
-    set text(10pt)
-      if type(skill.name) == content {
-      } else if type(skill.name) == dictionary {
-        for (key, value) in skill.name {
-          emph(key) + ": " + value
-        }
+#let skills-block(skills) = block[
+  #text(20pt, strong("Skills"))
+
+  #for (skill, skillValue) in skills {
+    // Skill title
+    block(spacing: 16pt)[
+      #text(16pt, strong(skill))
+    ]
+
+    // Skill value can be content, dictionary, or plain
+    if type(skillValue) == content {
+        text(12pt, skillValue)
+    }
+    else if type(skillValue) == dictionary {
+      for (subskill, subskillValue) in skillValue {
+        block(spacing: 12pt)[
+          #text(14pt, emph("-" + subskill + "-")) \
+          #text(12pt, subskillValue)
+        ]
       }
     }
   }
-)
+]
 
 #let formation(..jobs) = grid(
-  // inset: 5pt,
-  grid.header(grid.cell[
+  inset: 20pt,
+    grid.header(grid.cell(
+        inset: (
+            bottom: -10pt,
+            rest: 10pt,
+        )
+    )[
       #set text(20pt)
       *Formation*
       #box(width: 1fr,
@@ -82,16 +95,20 @@
 )
 
 #let job_xp(..jobs) = grid(
-  // inset: 5pt,
-  grid.header(
-      grid.cell[
+  inset: 20pt,
+    grid.header(grid.cell(
+        inset: (
+            bottom: -10pt,
+            rest: 10pt,
+        )
+      )[
           #box(width: 1fr, line(length: 100%, stroke: luma(180)))
           #set text(20pt)
           *Professional Experience*]
   ),
   {
     for job in jobs.pos() {
-        align(left)[
+        align(right)[
           *#job.company* - #job.role _(#job.timeframe)_ \
           #job.details
         ]
@@ -132,11 +149,10 @@
     // Content box
     grid(
         columns: (1fr, 4fr),
-        // rows: (2fr, 1fr),
+        rows: (1fr),
         // Skills box
         grid.cell(
-            rowspan: 2,
-            align: center,
+            align: center + horizon,
             // inset: (
             //     top: 20pt,
             //     left: 20pt,
@@ -146,16 +162,21 @@
                 right: blue + 5pt,
             )
         )[
-            #set text(20pt)
             #skills-block(
                 (
-                    name: [Informatique],
-                ),
-                (
-                    name: (
-                        Programmation: [Programmation],
-                        tool: [Typst],
+                    (emoji.computer + " Informatique"): (
+                        programmation: [R Python Unix],
+                        images: [GIMP, Inkscape]
                     ),
+                    Langues: [
+                        #flag-us() Anglais C1 \
+                        #flag-es() Espagnol B2 \
+                        #flag-fr() Français natif\
+                    ],
+                    (emoji.notes + " Musique"): [
+                        #emoji.drum Batteur depuis 2011 \
+                        Interprète - Compositeur
+                    ],
                 ),
             )
         ],
