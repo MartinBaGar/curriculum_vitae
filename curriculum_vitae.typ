@@ -37,27 +37,30 @@
     ],
 )
 
-#let skills-block(skills) = block[
-  #text(20pt, strong("Skills"))
-
-  #for (skill, skillValue) in skills {
-    // Skill title
-    block(spacing: 16pt)[
-      #text(16pt, strong(skill))
-    ]
-
-    // Skill value can be content, dictionary, or plain
-    if type(skillValue) == content {
-        text(12pt, skillValue)
-    }
-    else if type(skillValue) == dictionary {
-      for (subskill, subskillValue) in skillValue {
-        block(spacing: 12pt)[
-          #text(14pt, emph("-" + subskill + "-")) \
-          #text(12pt, subskillValue)
+#let skills-block(skills) = block(
+    inset: 10pt,
+)[
+    #box(width: 1fr, line(length: 100%, stroke: luma(180)))
+    #text(20pt, strong("Skills"))
+    #box(width: 1fr, line(length: 100%, stroke: luma(180)))
+    #for (skill, skillValue) in skills {
+        // Skill title
+        block(spacing: 16pt)[
+            #text(16pt, strong(skill))
         ]
-      }
-    }
+
+        // Skill value can be content, dictionary, or plain
+        if type(skillValue) == content {
+            text(12pt, skillValue)
+        }
+        else if type(skillValue) == dictionary {
+        for (subskill, subskillValue) in skillValue {
+            block(spacing: 12pt)[
+            #text(14pt, emph("-" + subskill + "-")) \
+            #text(12pt, subskillValue)
+            ]
+        }
+        }
   }
 ]
 
@@ -102,13 +105,14 @@
             rest: 10pt,
         )
       )[
-          #box(width: 1fr, line(length: 100%, stroke: luma(180)))
           #set text(20pt)
-          *Professional Experience*]
+          *Professional Experience*
+          #box(width: 1fr, line(length: 100%, stroke: luma(180)))
+      ]
   ),
   {
     for job in jobs.pos() {
-        align(right)[
+        align(left)[
           *#job.company* - #job.role _(#job.timeframe)_ \
           #job.details
         ]
@@ -116,7 +120,12 @@
   }
 )
 
-// Page content
+////////////////////////
+  //                    //
+    //   PAGE CONTENT     //
+  //                    //
+////////////////////////
+
 #grid(
   rows: (0.2fr, 1fr),
     // Heading box
@@ -128,7 +137,7 @@
             stroke: none,
             // inset: 15pt,
         )[
-            #image("chimpanzee_tongue_out.png")
+            #image("chimpanzee_tongue_out.png", width: 80%)
         ],
         rect(
             // inset: (
@@ -148,7 +157,7 @@
     ),
     // Content box
     grid(
-        columns: (1fr, 4fr),
+        columns: (1.5fr, 4fr),
         rows: (1fr),
         // Skills box
         grid.cell(
@@ -169,9 +178,9 @@
                         images: [GIMP, Inkscape]
                     ),
                     Langues: [
+                        #flag-fr() Français natif\
                         #flag-us() Anglais C1 \
                         #flag-es() Espagnol B2 \
-                        #flag-fr() Français natif\
                     ],
                     (emoji.notes + " Musique"): [
                         #emoji.drum Batteur depuis 2011 \
