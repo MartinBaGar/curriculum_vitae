@@ -130,15 +130,11 @@
   rows: (0.2fr, 1fr),
     // Heading box
     grid(
-        columns: (auto, auto),
+        columns: (30%, auto),
         stroke: (bottom : blue + 5pt, rest: none),
         align: horizon,
-        rect(
-            stroke: none,
-            // inset: 15pt,
-        )[
-            #image("chimpanzee_tongue_out.png", width: 80%)
-        ],
+        inset: 15pt,
+        image("chimpanzee_tongue_out.png"),
         rect(
             // inset: (
             //     left: 20pt,
@@ -174,17 +170,20 @@
             #skills-block(
                 (
                     (emoji.computer + " Informatique"): (
-                        programmation: [R Python Unix],
-                        images: [GIMP, Inkscape]
+                        programmation: [Python, R, Unix],
+                        "modélisation et dynamique moléculaire": [GROMACS, Amber MD, MOE Pymol, VMD, Blender],
+                        docking: [Suite AutoDock, HADDOCK],
+                        images: [GIMP, Inkscape],
+                        musique: [FL Studio, Guitar Pro]
                     ),
                     Langues: [
-                        #flag-fr() Français natif\
+                        #flag-fr() Français Natif \
                         #flag-us() Anglais C1 \
                         #flag-es() Espagnol B2 \
                     ],
                     (emoji.notes + " Musique"): [
                         #emoji.drum Batteur depuis 2011 \
-                        Interprète - Compositeur
+                        Interprète-compositeur
                     ],
                 ),
             )
@@ -278,37 +277,6 @@
             )
         ],
         )
-    // rect(height: 100%, stroke: (right : blue + 5pt, rest: none))[
-    // #image("chimpanzee_tongue_out.png", width: 100%)
-    //     #align(center,
-    //     rect[
-    //             *COMPÉTENCES*
-
-    //             *Langues*
-
-    //             Anglais C1 Espagnol B2
-
-    //             *Informatique*
-
-    //             -programmation- R Python Unix
-
-    //             -modélisation et dynamique moléculaire- GROMACS, Amber MD, MOE Pymol,  VMD Blender
-
-    //             -docking- Suite AutoDock, HADDOCK
-
-    //             -images- GIMP Inkscape
-
-    //             -musique- FL Studio Guitar Pro
-
-    //             *Musique*
-
-    //             Batteur depuis 2011 Interprète-compositeur
-    //         ]
-    //     )
-    // ],
-    // rect[
-    // #image("chimpanzee_tongue_out.png", width: 100pt, height: 20%),
-    // ]
 )
 
 
