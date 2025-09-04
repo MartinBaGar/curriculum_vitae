@@ -3,10 +3,10 @@
 )
 
 #grid(
-  rows: (0.2fr, 1fr),
+  rows: (1fr, 6fr),
     // Heading box
     grid(
-        columns: (30%, auto),
+        columns: (auto, auto),
         stroke: (bottom : black + 2pt, rest: none),
         align: horizon,
         inset: 15pt,
@@ -25,12 +25,16 @@
                 [#link("https://www.google.com/maps/place/48+Rue+des+Vinaigriers,+75010+Paris")[
                         48 rue des Vinaigriers, 75010 Paris
                     ]],
+                    (emoji.cat + [#link("https://github.com/MartinBaGar")[
+                        MartinBaGar
+                    ]]),
                 )],
     ),
+
     // Content box
     grid(
         columns: (1.5fr, 4fr),
-        rows: (1fr, 1.2fr),
+        rows: (1fr, 1fr),
         // Skills box
         grid.cell(
             rowspan: 2,
@@ -97,7 +101,6 @@
                     details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
-
             #job_xp(
                 (
                     company: [Laboratoire de Biologie Théorique],
@@ -107,7 +110,6 @@
                         Simulation par Dynamique Moléculaire \
                         Simulation par Dynamique Moléculaire \
                         Simulation par Dynamique Moléculaire \
-                        Simulation par Dynamique Moléculaire
                     ],
                 ),
                 (

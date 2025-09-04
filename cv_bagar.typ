@@ -14,7 +14,7 @@
         doc
     }
 
-#let personnal_info(name, age, phone, email, address) = grid(
+#let personnal_info(name, age, phone, email, address, ..args) = grid(
     // inset: 0pt,
     columns: (1fr, 1fr),
     grid.cell(align: left)[
@@ -39,6 +39,11 @@
         #emoji.email #email
 
         #emoji.pin.round #address
+
+        #for content in args.pos() {
+          content
+        }
+
     ],
 )
 
@@ -88,7 +93,10 @@
 ]
 
 #let formation(..jobs) = grid(
-  inset: 20pt,
+    inset: (
+        bottom: 5pt,
+        rest: 20pt,
+    ),
     grid.header(grid.cell(
         inset: (
             bottom: -10pt,
@@ -124,6 +132,7 @@
     grid.header(grid.cell(
         inset: (
             bottom: -10pt,
+            top: -0pt,
             rest: 10pt,
         )
       )[
