@@ -7,7 +7,7 @@
     // Heading box
     grid(
         columns: (30%, auto),
-        stroke: (bottom : blue + 5pt, rest: none),
+        stroke: (bottom : black + 2pt, rest: none),
         align: horizon,
         inset: 15pt,
         image("chimpanzee_tongue_out.png"),
@@ -30,34 +30,29 @@
     // Content box
     grid(
         columns: (1.5fr, 4fr),
-        rows: (1fr),
+        rows: (1fr, 1.2fr),
         // Skills box
         grid.cell(
-            // align: center + horizon,
+            rowspan: 2,
             align: center,
-            // inset: (
-            //     top: 20pt,
-            //     left: 20pt,
-            //     right: 20pt
-            // ),
             stroke: (
-                right: blue + 5pt,
+                right: black + 2pt,
             )
         )[
             #skills-block(
                 (
                     (emoji.computer + " Informatique"): (
-                        programmation: [Python, R, Unix],
-                        "modélisation et dynamique moléculaire": [GROMACS, Amber MD, MOE Pymol, VMD, Blender],
-                        docking: [Suite AutoDock, HADDOCK],
-                        images: [GIMP, Inkscape],
-                        musique: [FL Studio, Guitar Pro]
+                        Programmation: [Python, R, Unix],
+                        "modélisation, dynamique moléculaire": [GROMACS, Amber MD, MOE Pymol, VMD, Blender],
+                        Docking: [Suite AutoDock, HADDOCK],
+                        Images: [GIMP, Inkscape],
+                        Musique: [FL Studio, Guitar Pro]
                     ),
-                    Langues: [
-                        #flag-fr() Français Natif \
-                        #flag-us() Anglais C1 \
-                        #flag-es() Espagnol B2 \
-                    ],
+                    (emoji.abc + "Langues"): (
+                        (flag-fr(), "Français", "Natif"),
+                        (flag-us(), "Anglais", "C1"),
+                        (flag-es(), "Espagnol", "B2"),
+                    ),
                     (emoji.notes + " Musique"): [
                         #emoji.drum Batteur depuis 2011 \
                         Interprète-compositeur
@@ -109,8 +104,10 @@
                     role: [Lead Engineer],
                     timeframe: [Jan - Juil 2025],
                     details: [
-                        - Raised engineers from 3x to 10x
-                        - Did a great job
+                        Simulation par Dynamique Moléculaire \
+                        Simulation par Dynamique Moléculaire \
+                        Simulation par Dynamique Moléculaire \
+                        Simulation par Dynamique Moléculaire
                     ],
                 ),
                 (
