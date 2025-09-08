@@ -26,7 +26,7 @@
 
         #name
 
-        #age years old
+        #age ans
     ],
     grid.cell(align: right)[
         #set par(
@@ -48,9 +48,12 @@
 )
 
 #let skills-block(skills) = block(
-    inset: 10pt,
+    inset: (
+        top: 10pt,
+        rest: 20pt,
+    ),
 )[
-    #box(width: 1fr, line(length: 100%, stroke: luma(180)))
+    // #box(width: 1fr, line(length: 100%, stroke: luma(180)))
     #text(20pt, smallcaps[*Skills*])
     #box(width: 1fr, line(length: 100%, stroke: luma(180)))
     #for (skill, skillValue) in skills {
@@ -62,12 +65,12 @@
         if type(skillValue) == array {
             set text(14pt)
             grid(
-                columns: 3,
-                gutter: 10pt,
-                ..for (flag, language, level) in skillValue {
+                columns: 2,
+                gutter: 5pt,
+                ..for (language, level) in skillValue {
             (
-                grid.cell(flag, align: center),
-                grid.cell(language, align: center),
+                // grid.cell(flag, align: center),
+                grid.cell(language, align: left),
                 grid.cell(level, align: center)
             )
         }
@@ -109,30 +112,40 @@
           line(length: 100%, stroke: luma(180)))
   ]),
   {
-    for job in jobs.pos() {
-        [
-          #set par(
-            spacing: 4pt,
-            justify: true,
-          )
-          *#job.diploma* - #job.institution _(#job.timeframe)_ \
-          #emph(job.feeling) \
+    set par(
+        justify: true,
+        leading: 6pt,
+        spacing: 10pt,
+    )
 
-            #par(
-                job.details,
-                spacing: 12pt,
-            )
+    for job in jobs.pos() {
+        block(
+            below: 4pt,
+        )[
+            #text(11pt)[#smallcaps()[*#job.diploma*]] -
+            #text(10pt)[#job.institution _(#job.timeframe)_ \ ]
+        ]
+
+        text(10pt)[#emph(job.feeling) \ ]
+
+        block(
+              below: 18pt,
+        )[
+            #job.details
         ]
     }
   }
 )
 
 #let job_xp(..jobs) = grid(
-  inset: 20pt,
+    inset: (
+        bottom: 5pt,
+        rest: 20pt,
+    ),
     grid.header(grid.cell(
         inset: (
             bottom: -10pt,
-            top: -0pt,
+            // top: -0pt,
             rest: 10pt,
         )
       )[
@@ -142,11 +155,22 @@
       ]
   ),
   {
-    for job in jobs.pos() {
-        align(left)[
-          *#job.company* - #job.role _(#job.timeframe)_ \
-          #job.details
-        ]
+    set par(
+        justify: true,
+        leading: 6pt,
+        spacing: 10pt,
+    )
+
+      for job in jobs.pos() {
+          [
+              #text(11pt)[#smallcaps[*#job.company*] - #job.role _(#job.timeframe)_ \ ]
+          ]
+
+          block(
+              below: 18pt,
+          )[
+              #job.details
+          ]
     }
   }
 )
