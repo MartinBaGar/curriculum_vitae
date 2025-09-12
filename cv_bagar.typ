@@ -54,7 +54,7 @@
     ),
 )[
     // #box(width: 1fr, line(length: 100%, stroke: luma(180)))
-    #text(20pt, smallcaps[*Skills*])
+    #text(18pt, smallcaps[*Compétences*])
     #box(width: 1fr, line(length: 100%, stroke: luma(180)))
     #for (skill, skillValue) in skills {
         // Skill title
@@ -106,8 +106,7 @@
             rest: 10pt,
         )
     )[
-      #set text(20pt)
-      #smallcaps[*Formation*]
+      #text(18pt)[#smallcaps[*Formation*]]
       #box(width: 1fr,
           line(length: 100%, stroke: luma(180)))
   ]),
@@ -149,8 +148,7 @@
             rest: 10pt,
         )
       )[
-          #set text(20pt)
-          #smallcaps[*Professional Experience*]
+          #text(18pt)[#smallcaps[*Expériences Professionnelles*]]
           #box(width: 1fr, line(length: 100%, stroke: luma(180)))
       ]
   ),
@@ -162,10 +160,12 @@
     )
 
       for job in jobs.pos() {
-          [
-              #text(11pt)[#smallcaps[*#job.company*] - #job.role _(#job.timeframe)_ \ ]
+          block(
+              below: 4pt,
+          )[
+              #text(11pt)[#smallcaps[*#job.company*] - _(#job.timeframe)_ \ ]
           ]
-
+          text(10pt)[#emph(job.role)]
           block(
               below: 18pt,
           )[
@@ -176,5 +176,5 @@
 )
 
 // Local Variables:
-// tp--master-file: "/home/mabagar/docs/curriculum_vitae/curriculum_vitae.typ"
+// jinx-languages: "fr"
 // End:

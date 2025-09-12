@@ -47,8 +47,9 @@
                 (
                     (emoji.computer + " Informatique"): (
                         Programmation: [Python, R, Unix],
-                        "Modélisation, dynamique moléculaire": [GROMACS, Amber MD, MOE Pymol, VMD, Blender],
-                        Docking: [Suite AutoDock, HADDOCK],
+                        "Molecular dynamics": [GROMACS, Amber MD],
+                        ("Visualisation"): [VMD, PyMOL, MOE, Blender],
+                        Docking: [Suite AutoDock / Vina, HADDOCK, GOLD],
                         Images: [GIMP, Inkscape],
                         Musique: [FL Studio, Guitar Pro]
                     ),
@@ -67,6 +68,56 @@
         grid.cell(
             // inset: 15pt,
         )[
+            #job_xp(
+                (
+                    company: [Laboratoire de Biologie Théorique],
+                    role: [Stagiaire],
+                    timeframe: [Jan - Juil 2025],
+                    details: [
+                        Simulation par Dynamique Moléculaire \
+                        Simulation par Dynamique Moléculaire \
+                        Simulation par Dynamique Moléculaire \
+                    ],
+                ),
+                (
+                    company: [Biovia - Dassault Systèmes],
+                    role: [Stagiaire],
+                    timeframe: [Mai-Juin 2024],
+                    details: [
+                        Développement d'un flux de travail intégrant l’IA pour la conception de ligands :
+                        Génération de ligands > Evaluation de leur vraisemblance > Docking > Analyse des interactions
+                    ],
+                ),
+                (
+                    company: [Laboratoire d’Innovation Thérapeutique],
+                    role: [Stagiaire],
+                    timeframe: [Janvier-Juin 2023],
+                    details: [
+                        Modélisation des état conformationnels du corécepteur de HIV-1
+                        en relation avec le tropisme viral R5 et R5X4 \
+                        Simulation par Dynamique Moléculaire
+                        et Analyse avec la suite Amber
+                    ],
+                ),
+                (
+                    company: [Department of Immunology of the Okayama University],
+                    role: [Stagiaire],
+                    timeframe: [Avril-Août 2022],
+                    details: [
+                        Analyse de la base de données « The Cancer Genome Atlas » avec R \
+                        Caractérisation de l’expression de différentes protéines
+                    ],
+                ),
+                (
+                    company: [Federal University of Pernambouco],
+                    role: [Stagiaire],
+                    timeframe: [Avril-Juin 2019],
+                    details: [
+                        Synthèse et caractérisation de nanoparticules d’argent à effet larvicide \
+                        Test d’efficacité des nanoparticules d’argent
+                    ],
+                )
+            )
             #formation(
                 (
                     diploma: [Master Bio-informatique : _In Silico Drug Design_],
@@ -103,60 +154,11 @@
                     details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
-            #job_xp(
-                (
-                    company: [Laboratoire de Biologie Théorique],
-                    role: [Lead Engineer],
-                    timeframe: [Jan - Juil 2025],
-                    details: [
-                        Simulation par Dynamique Moléculaire \
-                        Simulation par Dynamique Moléculaire \
-                        Simulation par Dynamique Moléculaire \
-                    ],
-                ),
-                (
-                    company: [Biovia - Dassault Systèmes],
-                    role: [],
-                    timeframe: [Mai-Juin 2024],
-                    details: [
-                        Développement d'un workflow intégrant l’IA pour la conception de ligands
-                        Génération de ligands (PMDM, PocketFlow), Evaluation de leur vraisemblance (PosesBuster), Docking (GOLD, Quick Vina 2), Analyse des interactions (Discovery Studio)
-                    ],
-                ),
-                (
-                    company: [Laboratoire d’Innovation Thérapeutique],
-                    role: [],
-                    timeframe: [Janvier-Juin 2023],
-                    details: [
-                        Modélisation des état conformationnels du corécepteur de HIV-1
-                        en relation avec le tropisme viral R5 et R5X4
-                        Simulation par Dynamique Moléculaire
-                        et Analyse avec la suite Amber
-                    ],
-                ),
-                (
-                    company: [Department of Immunology of the Okayama University],
-                    role: [],
-                    timeframe: [Avril-Août 2022],
-                    details: [
-                        Analyse de la base de données « The Cancer Genome Atlas » avec R \
-                        Caractérisation de l’expression de différentes protéines
-                    ],
-                ),
-                (
-                    company: [Federal University of Pernambouco],
-                    role: [],
-                    timeframe: [Avril-Juin 2019],
-                    details: [
-                        Synthèse et caractérisation de nanoparticules d’argent à effet larvicide \
-                        Test d’efficacité des nanoparticules d’argent
-                    ],
-                )
-            )
         ],
         )
 )
 
 // Local Variables:
-// tp--master-file: "/home/mabagar/docs/curriculum_vitae/test.typ"
+// jinx-languages: "fr"
+// tp--master-file: "/home/mabagar/docs/curriculum_vitae/curriculum_vitae.typ"
 // End:
