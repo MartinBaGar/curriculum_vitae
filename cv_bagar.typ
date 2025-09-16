@@ -76,7 +76,7 @@
             skills_counter += 1
             // [#skills_counter]
             let display-title = if "icon" in skill-data and "title" in skill-data {
-                skill-data.icon + " " + skill-data.title
+                skill-data.icon + "  " + skill-data.title
             } else if "title" in skill-data {
                 skill-data.title
             } else {
