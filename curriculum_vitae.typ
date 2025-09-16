@@ -1,4 +1,5 @@
 #import "cv_bagar.typ" : *
+#import "@preview/fontawesome:0.6.0" : *
 #show: cv_bagar.with(
 )
 
@@ -25,9 +26,11 @@
                 [#link("https://www.google.com/maps/place/48+Rue+des+Vinaigriers,+75010+Paris")[
                         48 rue des Vinaigriers, 75010 Paris
                     ]],
-                    (emoji.cat + [#link("https://github.com/MartinBaGar")[
+                    (
+                        (fa-github(), [#link("https://github.com/MartinBaGar")[
                         MartinBaGar
-                    ]]),
+                        ]])
+                    ),
                 )],
     ),
 
@@ -45,23 +48,36 @@
         )[
             #skills-block(
                 (
-                    (emoji.computer + " Informatique"): (
-                        Programmation: [Python, R, Unix],
-                        "Molecular dynamics": [GROMACS, Amber MD],
-                        ("Visualisation"): [VMD, PyMOL, MOE, Blender],
-                        Docking: [Suite AutoDock / Vina, HADDOCK, GOLD],
-                        Images: [GIMP, Inkscape],
-                        Musique: [FL Studio, Guitar Pro]
+                    informatique: (
+                        icon: fa-computer(),
+                        title: "Informatique",
+                        skills: (
+                            Programmation: [Python, R, Unix],
+                            "Dynamique moléculaire": [GROMACS, Amber MD],
+                            Visualisation: [VMD, PyMOL, MOE, Blender],
+                            Docking: [Suite AutoDock / Vina, HADDOCK, GOLD],
+                            Images: [GIMP, Inkscape],
+                            Musique: [FL Studio, Guitar Pro]
+                        )
                     ),
-                    (emoji.abc + "Langues"): (
-                        ("Anglais", "C1"),
-                        ("Espagnol", "B2"),
+                    langues: (
+                        icon: fa-language(),
+                        title: "Langues",
+                        skills: (
+                            ("Anglais", "C1"),
+                            ("Espagnol", "B2"),
+                        )
                     ),
-                    (emoji.notes + " Musique"): [
-                        #emoji.drum Batteur depuis 2011 \
-                        Interprète-compositeur
-                    ],
-                ),
+                    musique: (
+                        icon: fa-music(),
+                        title: "Musique",
+                        skills: [
+                            Batteur depuis 2011 \
+                            Interprète et compositeur au sein de groupes de Metal
+                            // Add more music content here
+                        ]
+                    ),
+                )
             )
         ],
         // Pro box
@@ -71,17 +87,15 @@
             #job_xp(
                 (
                     company: [Laboratoire de Biologie Théorique],
-                    role: [Stagiaire],
+                    role: [Stage],
                     timeframe: [Jan - Juil 2025],
                     details: [
-                        Simulation par Dynamique Moléculaire \
-                        Simulation par Dynamique Moléculaire \
-                        Simulation par Dynamique Moléculaire \
-                    ],
-                ),
+                        Simulations de dynamique moléculaire pour l’étude de mécanismes d’activation enzymatique \
+                        Mise en œuvre de techniques d’échantillonnage accru (REST2) et d’analyses de contacts et de clustering pour caractériser les transitions conformationnelles ],
+                    ),
                 (
                     company: [Biovia - Dassault Systèmes],
-                    role: [Stagiaire],
+                    role: [Stage],
                     timeframe: [Mai-Juin 2024],
                     details: [
                         Développement d'un flux de travail intégrant l’IA pour la conception de ligands :
@@ -90,7 +104,7 @@
                 ),
                 (
                     company: [Laboratoire d’Innovation Thérapeutique],
-                    role: [Stagiaire],
+                    role: [Stage],
                     timeframe: [Janvier-Juin 2023],
                     details: [
                         Modélisation des état conformationnels du corécepteur de HIV-1
@@ -101,7 +115,7 @@
                 ),
                 (
                     company: [Department of Immunology of the Okayama University],
-                    role: [Stagiaire],
+                    role: [Stage],
                     timeframe: [Avril-Août 2022],
                     details: [
                         Analyse de la base de données « The Cancer Genome Atlas » avec R \
@@ -110,7 +124,7 @@
                 ),
                 (
                     company: [Federal University of Pernambouco],
-                    role: [Stagiaire],
+                    role: [Stage],
                     timeframe: [Avril-Juin 2019],
                     details: [
                         Synthèse et caractérisation de nanoparticules d’argent à effet larvicide \
@@ -118,6 +132,7 @@
                     ],
                 )
             )
+            #v(1fr)
             #formation(
                 (
                     diploma: [Master Bio-informatique : _In Silico Drug Design_],
@@ -154,6 +169,7 @@
                     details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
+            #v(1fr)
         ],
         )
 )
