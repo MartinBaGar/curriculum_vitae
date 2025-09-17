@@ -11,12 +11,8 @@
         stroke: (bottom : black + 2pt, rest: none),
         align: horizon,
         inset: 15pt,
-        image("chimpanzee_tongue_out.png"),
+        image("img/photo_CV.jpeg"),
         rect(
-            // inset: (
-            //     left: 20pt,
-            //     right: 30pt
-            // ),
             stroke: none, width: 100%)[
                 #personnal_info(
                 [Martin Bari Garnier],
@@ -49,7 +45,7 @@
             #skills-block(
                 (
                     informatique: (
-                        icon: fa-computer(),
+                        icon: fa-computer(size: 12pt),
                         title: "Informatique",
                         skills: (
                             Programmation: [Python, R, Unix],
@@ -61,7 +57,7 @@
                         )
                     ),
                     langues: (
-                        icon: fa-language(),
+                        icon: fa-language(size: 12pt),
                         title: "Langues",
                         skills: (
                             ("Anglais", "C1"),
@@ -69,12 +65,13 @@
                         )
                     ),
                     musique: (
-                        icon: fa-music(),
+                        icon: fa-music(size: 12pt),
                         title: "Musique",
                         skills: [
-                            Batteur depuis 2011 \
+                            #set par(justify: true)
+                            Batteur depuis plus de 13 ans \
+
                             Interprète et compositeur au sein de groupes de Metal
-                            // Add more music content here
                         ]
                     ),
                 )
@@ -87,16 +84,18 @@
             #job_xp(
                 (
                     company: [Laboratoire de Biologie Théorique],
-                    role: [Stage],
+                    location: [Paris],
                     timeframe: [Jan - Juil 2025],
+                    role: [Stage],
                     details: [
                         Simulations de dynamique moléculaire pour l’étude de mécanismes d’activation enzymatique \
                         Mise en œuvre de techniques d’échantillonnage accru (REST2) et d’analyses de contacts et de clustering pour caractériser les transitions conformationnelles ],
                     ),
                 (
                     company: [Biovia - Dassault Systèmes],
-                    role: [Stage],
+                    location: [Paris],
                     timeframe: [Mai-Juin 2024],
+                    role: [Stage],
                     details: [
                         Développement d'un flux de travail intégrant l’IA pour la conception de ligands :
                         Génération de ligands > Evaluation de leur vraisemblance > Docking > Analyse des interactions
@@ -104,8 +103,9 @@
                 ),
                 (
                     company: [Laboratoire d’Innovation Thérapeutique],
-                    role: [Stage],
+                    location: [Strasbourg],
                     timeframe: [Janvier-Juin 2023],
+                    role: [Stage],
                     details: [
                         Modélisation des état conformationnels du corécepteur de HIV-1
                         en relation avec le tropisme viral R5 et R5X4 \
@@ -114,9 +114,10 @@
                     ],
                 ),
                 (
-                    company: [Department of Immunology of the Okayama University],
-                    role: [Stage],
+                    company: [Department of Immunology],
+                    location: [Okayama University],
                     timeframe: [Avril-Août 2022],
+                    role: [Stage],
                     details: [
                         Analyse de la base de données « The Cancer Genome Atlas » avec R \
                         Caractérisation de l’expression de différentes protéines
@@ -124,14 +125,16 @@
                 ),
                 (
                     company: [Federal University of Pernambouco],
-                    role: [Stage],
+                    location: [Recife],
                     timeframe: [Avril-Juin 2019],
+                    role: [Stage],
                     details: [
                         Synthèse et caractérisation de nanoparticules d’argent à effet larvicide \
                         Test d’efficacité des nanoparticules d’argent
                     ],
                 )
             )
+
             #v(1fr)
             #formation(
                 (
@@ -169,7 +172,6 @@
                     details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
-            #v(1fr)
         ],
         )
 )

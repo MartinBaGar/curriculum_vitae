@@ -1,9 +1,7 @@
 #import "@preview/flagada:1.0.1" : *
 #import "@preview/fontawesome:0.6.0" : *
 
-#let cv_bagar(
-        doc
-    ) = {
+#let cv_bagar(doc) = {
         set page(
                 margin: 0%
             )
@@ -16,7 +14,6 @@
     }
 
 #let personnal_info(name, age, phone, email, address, ..args) = grid(
-    // inset: 0pt,
     columns: (1fr, 1fr),
     grid.cell(align: left)[
         #set par(
@@ -56,8 +53,9 @@
     // row-gutter: -30pt,
     grid.header(grid.cell(
         inset: (
-            rest: 10pt,
             bottom: 0pt,
+            top: 20pt,
+            rest: 10pt,
         )
       )[
           #text(18pt)[#smallcaps[*Compétences*]]
@@ -76,9 +74,9 @@
             skills_counter += 1
             // [#skills_counter]
             let display-title = if "icon" in skill-data and "title" in skill-data {
-                skill-data.icon + "  " + skill-data.title
+                skill-data.icon + "  " + smallcaps(skill-data.title)
             } else if "title" in skill-data {
-                skill-data.title
+                smallcaps(skill-data.title)
             } else {
                 skill-key  // fallback to key name
             }
@@ -137,6 +135,7 @@
     ),
     grid.header(grid.cell(
         inset: (
+            top: 0pt,
             bottom: -10pt,
             rest: 10pt,
         )
@@ -178,7 +177,7 @@
     grid.header(grid.cell(
         inset: (
             bottom: -10pt,
-            // top: -0pt,
+            top: 20pt,
             rest: 10pt,
         )
       )[
@@ -195,13 +194,13 @@
 
       for job in jobs.pos() {
           block(
+              above: 15pt,
               below: 4pt,
           )[
-              #text(11pt)[#smallcaps[*#job.company*] - _(#job.timeframe)_ \ ]
+              #text(11pt)[#smallcaps[*#job.company*] - #job.location - _(#job.timeframe)_ \ ]
           ]
           text(10pt)[#emph(job.role)]
           block(
-              below: 15pt,
           )[
               #job.details
           ]
