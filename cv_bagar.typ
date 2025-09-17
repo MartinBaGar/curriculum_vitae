@@ -70,11 +70,12 @@
         let skills_count = skills.len()
         let skills_counter = 0
         for (skill-key, skill-data) in skills {
-            v(1fr)
+            // v(1fr)
             skills_counter += 1
             // [#skills_counter]
             let display-title = if "icon" in skill-data and "title" in skill-data {
-                skill-data.icon + "  " + smallcaps(skill-data.title)
+                set text(14pt)
+                skill-data.icon + " " + smallcaps(skill-data.title)
             } else if "title" in skill-data {
                 smallcaps(skill-data.title)
             } else {
@@ -95,7 +96,7 @@
 
             // Handle different types of skill content
             if type(skill-content) == array {
-                set text(14pt)
+                set text(12pt)
                 grid(
                     columns: 2,
                     gutter: 5pt,
@@ -108,7 +109,7 @@
                 )
             }
             else if type(skill-content) == content {
-                text(14pt, skill-content)
+                text(12pt, skill-content)
             }
             else if type(skill-content) == dictionary {
                 for (subskill, subskillValue) in skill-content {
@@ -120,9 +121,9 @@
             }
             if skills_counter == skills_count {
                 v(1fr)
-                v(18pt) // Size of the header without its inset
+                // v(18pt) // Size of the header without its inset
             } else {
-                v(1fr)
+                // v(1fr)
             }
         }
     }
@@ -197,7 +198,7 @@
               above: 15pt,
               below: 4pt,
           )[
-              #text(11pt)[#smallcaps[*#job.company*] - #job.location - _(#job.timeframe)_ \ ]
+              #text(11pt)[#smallcaps[*#job.company*], #job.location  _(#job.timeframe)_ \ ]
           ]
           text(10pt)[#emph(job.role)]
           block(
