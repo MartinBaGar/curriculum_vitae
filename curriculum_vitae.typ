@@ -78,7 +78,6 @@
         ],
         // Pro box
         grid.cell(
-            // inset: 15pt,
         )[
             #job_xp(
                 (
@@ -87,14 +86,14 @@
                     timeframe: [Jan-Juil 2025],
                     role: [Stage : Étude du mécanisme d’activation allostérique ion dépendante de l'EndoU ribonucléase],
                     details: [
-                        Simulations de dynamique moléculaire pour l’étude de mécanismes d’activation enzymatique. Mise en œuvre de techniques d’échantillonnage accru (REST2) et d’analyses de contacts et de clustering pour caractériser les transitions conformationnelles ],
+                        Simulations de dynamique moléculaire pour l’étude de mécanismes d’activation enzymatique. Mise en œuvre de techniques d’échantillonnage accru (REST2) et d’analyses de contacts et de clustering pour caractériser les transitions conformationnelles],
                     ),
                 (
                     company: [Biovia - Dassault Systèmes],
                     location: [Paris],
                     timeframe: [Mai-Juin 2024],
-                    role: [Stage : Modélisation moléculaire et Deep Learning pour la conception de médicaments in silico
-],
+                    role: [Stage : Modélisation moléculaire et IA générative pour la conception de médicaments in silico
+                    ],
                     details: [
                         Développement d'un flux de travail intégrant l’IA pour la conception de ligands : Génération de ligands > Evaluation de leur vraisemblance > Docking > Analyse des interactions
                     ],
@@ -103,7 +102,7 @@
                     company: [Laboratoire d’Innovation Thérapeutique],
                     location: [Strasbourg],
                     timeframe: [Jan-Juin 2023],
-                    role: [Stage],
+                    role: [Stage : Modélisation des états conformationels de corécepteurs du VIH-1],
                     details: [
                         Modélisation des état conformationnels du corécepteur de HIV-1 en relation avec le tropisme viral R5 et R5X4. Simulation par Dynamique Moléculaire
                         et Analyse avec la suite Amber
@@ -113,7 +112,7 @@
                     company: [Department of Immunology],
                     location: [Okayama Univ. - Japon],
                     timeframe: [Avr-Août 2022],
-                    role: [Stage],
+                    role: [Stage : Étude du lien entre la protéine Txnip et l'inhibition des HSP90],
                     details: [
                         Analyse de la base de données « The Cancer Genome Atlas » avec R. Caractérisation de l’expression de différentes protéines
                     ],
@@ -129,7 +128,7 @@
                 )
             )
 
-            #v(1fr)
+            #v(2fr)
             #formation(
                 (
                     diploma: [Master Bio-informatique : _In Silico Drug Design_],
@@ -166,6 +165,7 @@
                     details: [Chimie générale, de synthèse (minérale et organique) et analytique, génie chimique],
                 ),
             )
+            #v(1fr)
         ],
         )
 )

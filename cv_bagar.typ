@@ -174,6 +174,7 @@
 #let job_xp(..jobs) = grid(
     inset: (
         rest: 20pt,
+        bottom: 0pt,
     ),
     grid.header(grid.cell(
         inset: (
