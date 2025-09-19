@@ -83,7 +83,7 @@
                 (
                     company: [Laboratoire de Biologie Théorique],
                     location: [Paris],
-                    timeframe: [Jan-Juil 2025],
+                    timeframe: [Janvier-Juillet 2025],
                     role: [Stage : Étude du mécanisme d’activation allostérique ion dépendante de l'EndoU ribonucléase],
                     details: [
                         Simulations de dynamique moléculaire pour l’étude de mécanismes d’activation enzymatique. Mise en œuvre de techniques d’échantillonnage accru (REST2) et d’analyses de contacts et de clustering pour caractériser les transitions conformationnelles],
@@ -101,7 +101,7 @@
                 (
                     company: [Laboratoire d’Innovation Thérapeutique],
                     location: [Strasbourg],
-                    timeframe: [Jan-Juin 2023],
+                    timeframe: [Janvier-Juin 2023],
                     role: [Stage : Modélisation des états conformationels de corécepteurs du VIH-1],
                     details: [
                         Modélisation des état conformationnels du corécepteur de HIV-1 en relation avec le tropisme viral R5 et R5X4. Simulation par Dynamique Moléculaire
@@ -111,7 +111,7 @@
                 (
                     company: [Department of Immunology],
                     location: [Okayama Univ. - Japon],
-                    timeframe: [Avr-Août 2022],
+                    timeframe: [Avril-Août 2022],
                     role: [Stage : Étude du lien entre la protéine Txnip et l'inhibition des HSP90],
                     details: [
                         Analyse de la base de données « The Cancer Genome Atlas » avec R. Caractérisation de l’expression de différentes protéines
